@@ -34,8 +34,8 @@ console.log("method concat: ", firstLetters.concat(lastLetters)); // ["N", "I", 
  */
 
 const arrayToCopy = [1, 2, 3, 4, 5, 6];
-console.log("method copyWithin: ", arr1.copyWithin(0, 2, 4));
-console.log(arrayToCopy.length);
+console.log("method copyWithin: ", arr1.copyWithin(0, 2, 4)); // [ 3, 4, 3, 4, 5, 6 ]
+console.log(arrayToCopy.length); // 6
 
 // ----------------------
 
@@ -45,7 +45,7 @@ console.log(arrayToCopy.length);
  */
 
 const array2 = ["a", "b", "c"];
-console.log("method entries: ", array2.entries().next());
+console.log("method entries: ", array2.entries().next()); // { value: [ 0, 'a' ], done: false }
 
 // ----------------------
 
@@ -70,8 +70,8 @@ console.log(
 const vocalsA = ["a", "e", "i", "o", "u"];
 const vocalsB = ["a", "e", "i", "o", "u"];
 // array.fill(valueToFill,indexToStart, indexToEnd)
-console.log("method fill:", vocalsA.fill("b", 2));
-console.log("method fill:", vocalsB.fill("b", 2, 3));
+console.log("method fill:", vocalsA.fill("b", 2)); // [ 'a', 'e', 'b', 'b', 'b' ]
+console.log("method fill:", vocalsB.fill("b", 2, 3)); // [ 'a', 'e', 'b', 'o', 'u' ]
 
 // ----------------------
 
@@ -92,5 +92,23 @@ console.log("method filter:", salaries.filter(salary => salary >= 500));
  * If no values satisfy the testing function, undefined is returned.
  */
 console.log("method find:", salaries.find(salary => salary > 900));
+
+// ----------------------
+
+/**
+ * Method Array.prototype.findIndex()
+ * method returns the index of the first element in an array that satisfies the provided testing function. 
+ * If no elements satisfy the testing function, -1 is returned.
+ */
+console.log("method findIndex:", salaries.findIndex(salary => salary > 900));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.findLast()
+ *  method iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function. 
+ *  If no elements satisfy the testing function, undefined is returned.
+ */
+console.log("method findLast:", salaries.findLast(salary => salary <= 200));
 
 // ----------------------
