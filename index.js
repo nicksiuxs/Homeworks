@@ -106,9 +106,15 @@ console.log("method findIndex:", salaries.findIndex(salary => salary > 900));
 
 /**
  *  Method Array.prototype.findLast()
- *  method iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function. 
+ *  method iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function.
  *  If no elements satisfy the testing function, undefined is returned.
  */
-console.log("method findLast:", salaries.findLast(salary => salary <= 200));
+// console.log("method findLast:", salaries.findLast(salary => salary <= 200));
 
 // ----------------------
+
+/**
+ *  Method Array.prototype.findLastIndex()
+ *  method iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function. 
+ *  If no elements satisfy the testing function, -1 is returned.
+ */
