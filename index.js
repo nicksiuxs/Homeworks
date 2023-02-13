@@ -109,7 +109,7 @@ console.log("method findIndex:", salaries.findIndex(salary => salary > 900));
  *  method iterates the array in reverse order and returns the value of the first element that satisfies the provided testing function.
  *  If no elements satisfy the testing function, undefined is returned.
  */
-// console.log("method findLast:", salaries.findLast(salary => salary <= 200));
+console.log("method findLast:", salaries.findLast(salary => salary <= 200));
 
 // ----------------------
 
@@ -118,3 +118,137 @@ console.log("method findIndex:", salaries.findIndex(salary => salary > 900));
  *  method iterates the array in reverse order and returns the index of the first element that satisfies the provided testing function. 
  *  If no elements satisfy the testing function, -1 is returned.
  */
+console.log("method findLast:", salaries.findLastIndex(salary => salary <= 200));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.flat()
+ *  method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+ */
+const array3 = [1, 2, 3, [4, [5, 6]]];
+console.log("method flat:", array3.flat());
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.flatMap()
+ *  method returns a new array formed by applying a given callback function to each element of the array, and then 
+ *  flattening the result by one level. It is identical to a map() followed by a flat() of depth 1 (arr.map(...args).flat()), 
+ *  but slightly more efficient than calling those two methods separately.
+ */
+const array4 = [{ name: "Nicolas" }, { name: "Juan" }, [{ name: "Felipe" }, { name: "Juan" }]]
+console.log("method flatMap:", array4.flatMap(person => person.name))
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.forEach()
+ *  method executes a provided function once for each array element.
+ */
+const persons = [{ name: "Nicolas" }, { name: "Juan" }, { name: "Isabella" }];
+console.log("method forEach Start:");
+persons.forEach(person => {
+    console.log(person.name)
+})
+console.log("method forEach end:");
+
+// ----------------------
+
+/**
+ *  Method Array.from()
+ *  static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+ */
+const oddNumbers = [2, 4, 6, 8, 10];
+console.log("method from:", Array.from(oddNumbers, number => number * number));
+
+// ----------------------
+
+/** 
+ *  Method Array.prototype.includes()
+ *  method determines whether an array includes a certain value among its entries, returning true or false as appropriate.
+*/
+console.log("method includes:", oddNumbers.includes(2));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.indexOf()
+ *  method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+*/
+console.log("method indexOf:", oddNumbers.indexOf(8));
+
+// ----------------------
+
+/**
+ *  Method Array.isArray() 
+ *  static method determines whether the passed value is an Array.
+*/
+console.log("method isArray:", Array.isArray(oddNumbers));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.join()
+ *  method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), 
+ *  separated by commas or a specified separator string. If the array has only one item, then that item will be returned 
+ *  without using the separator.
+*/
+const phrase = ["Hola", "mundo", "!"];
+console.log("method join:", phrase.join(" "));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.keys()
+ *  method returns a new Array Iterator object that contains the keys for each index in the array.
+*/
+const iterator = phrase.keys();
+console.log("method keys start:");
+for (const index of iterator) {
+    console.log(index);
+}
+console.log("method keys end:");
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.lastIndexOf()
+ *  method returns the last index at which a given element can be found in the array, or -1 if it is not present. 
+ *  The array is searched backwards, starting at fromIndex.
+*/
+console.log("method lastIndexOf:", oddNumbers.lastIndexOf(4));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.map()
+ *  method creates a new array populated with the results of calling a provided function on every element in the calling array.
+*/
+const evenNumbers = [1, 3, 5, 7, 9, 11];
+console.log("method map:", evenNumbers.map(number => number + 2));
+
+// ----------------------
+
+/**
+ *  Method Array.of()
+ *  static method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
+*/
+console.log("method of:", Array.of(oddNumbers, evenNumbers));
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.pop()
+ *  method removes the last element from an array and returns that element. This method changes the length of the array.
+*/
+console.log("method pop:", evenNumbers.pop());
+
+// ----------------------
+
+/**
+ *  Method Array.prototype.push()
+ *  method adds one or more elements to the end of an array and returns the new length of the array.
+*/
+evenNumbers.push(13);
+console.log("method push:", evenNumbers);
